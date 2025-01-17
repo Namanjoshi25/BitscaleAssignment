@@ -7,7 +7,7 @@ import DataTable from "@/components/DataTable";
 
 export default function Home() {
   return (
-    <div className="flex flex-col overflow-auto h-screen bg-gray-100">
+    <div className="flex flex-col  h-screen bg-gray-100">
     {/* Sidebar */}
     <Topbar />
    
