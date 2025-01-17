@@ -11,7 +11,7 @@ const Topbar = () => {
     setIsAutoSave((prev) => !prev);
   };
     return (
-        <header className="h-10 overflow-x-auto  z-50 bg-white flex items-center justify-between px-6 border-b border-gray-200   gap-3">
+        <header className="h-10  z-50 bg-white flex items-center justify-between px-6 border-b border-gray-200   gap-3">
       
           <div className=" flex items-center ">  
           <span>
