@@ -3,7 +3,7 @@ import { BellRingIcon,  CreditCard,   Layers,  Puzzle, Table } from "lucide-reac
 export default function Sidebar() {
   return (
     <aside 
-    className="w-12 bg-white   text-black flex flex-col items-center h-full border-r">
+    className="w-12  bg-white   text-black flex flex-col items-center h-full border-r">
    
       <nav className="flex flex-col justify-between h-full ">
         <div className=" Top-navlinks flex flex-col space-y-3 p-3 ">

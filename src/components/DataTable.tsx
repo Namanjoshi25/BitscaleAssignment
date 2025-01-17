@@ -24,14 +24,16 @@ const DataTable = () => {
     { id: 5, date: '2024-01-16 14:08', status: 'Loading data, Please wait', company: 'Figma Evaluation' },
   ]);
 
-  const totalRows = 15; // Total number of visible rows
+  const totalRows = 20; // Total number of visible rows
 
   const [editingCell, setEditingCell] = useState<{ rowId: number; columnId: string } | null>(null);
   const [editValue, setEditValue] = useState<string>('');
   const [editingColumn, setEditingColumn] = useState<string | null>(null);
   const [editColumnValue, setEditColumnValue] = useState<string>('');
   const handleCellEdit = (rowId: number, columnId: string) => {
-   console.log(editValue.length);
+   console.log("RowId-" + rowId + "ColmnId" + columnId) ;
+   console.log(rows,columns);
+  console.log(editValue);
     if(editValue.length > 20){
     setRows((prevRows) =>
       prevRows.map((row) =>
@@ -77,11 +79,16 @@ const DataTable = () => {
 
   const addColumn = () => {
     const newColumn = {
-      id: `col-${columns.length + 1}`,
+      id: `column${columns.length + 1}`,
       title: `Column ${columns.length + 1}`,
       icon: null,
     };
     setColumns([...columns, newColumn]);
+    setRows((prevRows) =>
+      prevRows.map((row) => ({
+        ...row,
+        [newColumn.id]: "",
+      })))      
   };
 
   const addRow = () => {
@@ -182,7 +189,8 @@ const DataTable = () => {
                         ? row.date
                         : colIndex === 1
                         ? row.status 
-                        : row.company}</span>
+                        : row.company}
+                        </span>
                     )}
                   </td>
                 ))}
